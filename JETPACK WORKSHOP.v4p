@@ -1,0 +1,185 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="D:\Retune16\Jetpack\JETPACK WORKSHOP.v4p" systemname="JETPACK WORKSHOP" filename="D:\Retune16\Jetpack\JETPACK WORKSHOP.v4p">
+   <BOUNDS type="Window" left="705" top="780" width="9420" height="7755">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <NODE systemname="Renderer (OpenVR DX11)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\modules\Renderer (OpenVR DX11).v4p" nodename="Renderer (OpenVR DX11)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="1215" top="4815" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="1">
+   <BOUNDS type="Node" left="1215" top="5685" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1215" top="5685" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="21105" top="780" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Texture" dstnodeid="1" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="AxisAndGrid (DX11)" filename="%VVVV%\packs\dx11\nodes\modules\AxisAndGrid\AxisAndGrid (DX11).v4p" nodename="AxisAndGrid (DX11)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="975" top="2895" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="3">
+   <BOUNDS type="Node" left="4380" top="6240" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4380" top="6240" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="17520" top="3780" width="10950" height="9585">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Background Color" visible="1">
+   </PIN>
+   <PIN pinname="Depth Buffer Mode" slicecount="1" values="Standard">
+   </PIN>
+   <PIN pinname="Depth Buffer Format" slicecount="1" values="D32_Float">
+   </PIN>
+   </NODE>
+   <NODE systemname="Camera (Transform Orbit)" filename="%VVVV%\addonpack\lib\nodes\modules\Transform\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="7200" top="4935" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="View" dstnodeid="3" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Projection" dstnodeid="3" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="Poser (OpenVR)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\plugins\VVVV.OpenVR.dll" nodename="Poser (OpenVR)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="4380" top="810" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="System" visible="1">
+   </PIN>
+   <PIN pinname="Controller Poses" visible="1">
+   </PIN>
+   <PIN pinname="Lighthouse Poses" visible="1">
+   </PIN>
+   <PIN pinname="HMD Pose" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="ViveController (OpenVR DX11.Layer)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\modules\ViveController (OpenVR DX11.Layer).v4p" nodename="ViveController (OpenVR DX11.Layer)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="4395" top="2640" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Controller" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="TrackedDevices (OpenVR)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\plugins\VVVV.OpenVR.dll" nodename="TrackedDevices (OpenVR)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="4380" top="1695" width="1515" height="270">
+   </BOUNDS>
+   <PIN pinname="System" visible="1">
+   </PIN>
+   <PIN pinname="Left and Right Controller" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="System" dstnodeid="7" dstpinname="System">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Left and Right Controller" dstnodeid="6" dstpinname="Controller">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Controller Poses" dstnodeid="6" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="1215" top="3930" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   <PIN pinname="Layer 4" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="8" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Layer Out" dstnodeid="0" dstpinname="Layer">
+   </LINK>
+   <NODE systemname="ViveLighthouse (OpenVR DX11.Layer)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\modules\ViveLighthouse (OpenVR DX11.Layer).v4p" nodename="ViveLighthouse (OpenVR DX11.Layer)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="2865" top="2670" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Lighthouse Poses" dstnodeid="9" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Layer" dstnodeid="8" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Layer" dstnodeid="8" dstpinname="Layer 3">
+   </LINK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="10" systemname="IOBox (Color)">
+   <BOUNDS type="Box" left="4410" top="5010" width="2250" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4410" top="5010" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.68122,0.68122,0.68122,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Color Output" dstnodeid="3" dstpinname="Background Color">
+   </LINK>
+   <NODE systemname="HMD (OpenVR DX11.Layer)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\modules\HMD (OpenVR DX11.Layer).v4p" nodename="HMD (OpenVR DX11.Layer)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="4095" top="4365" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="HMD Pose" dstnodeid="11" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="3510" top="4860" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Layer Out" dstnodeid="12" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Layer" dstnodeid="12" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Layer Out" dstnodeid="3" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="JETPACK WORLD0" filename="JETPACK WORLD0.v4p" componentmode="Hidden" id="13" nodename="JETPACK WORLD0.v4p">
+   <BOUNDS type="Node" left="5610" top="3210" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5610" top="3210" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="5025" top="2460" width="12315" height="10230">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Layer" dstnodeid="8" dstpinname="Layer 4">
+   </LINK>
+   </PATCH>

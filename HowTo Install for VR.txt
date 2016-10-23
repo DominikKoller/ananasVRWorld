@@ -1,0 +1,5 @@
+- Unzip Steam folder somewhere
+- Run steam and check thet SteamVR works
+- Run Room Setup in SteamVR to calibrate headset
+- Unzip vvvv somewhere
+- run OpenVR_Demo patch from girlpower

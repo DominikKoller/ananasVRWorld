@@ -1,0 +1,207 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="D:\Retune16\Jetpack\JETPACK DEMO.v4p" systemname="Jetpack Demo" filename="D:\Retune16\Jetpack\Jetpack Demo.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="2190" top="1050" width="8490" height="10260">
+   </BOUNDS>
+   <NODE systemname="Poser (OpenVR)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\plugins\VVVV.OpenVR.dll" nodename="Poser (OpenVR)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="2085" top="360" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="System" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="2160" top="4110" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Jetpack Pilot" filename="Jetpack Pilot.v4p" componentmode="Hidden" id="9" nodename="Jetpack Pilot.v4p">
+   <BOUNDS type="Node" left="2430" top="2070" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2430" top="2070" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="1080" top="120" width="19035" height="15480">
+   </BOUNDS>
+   <PIN pinname="Preview" visible="1">
+   </PIN>
+   <PIN pinname="Left Controller" visible="1">
+   </PIN>
+   <PIN pinname="Right Controller" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Intensity" visible="1" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <NODE systemname="TrackedDevices (OpenVR)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\plugins\VVVV.OpenVR.dll" nodename="TrackedDevices (OpenVR)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="2070" top="825" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="System" visible="1">
+   </PIN>
+   <PIN pinname="Left Controller" visible="1">
+   </PIN>
+   <PIN pinname="Right Controller" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="System" dstnodeid="12" dstpinname="System">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Left Controller" dstnodeid="9" dstpinname="Left Controller">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Right Controller" dstnodeid="9" dstpinname="Right Controller">
+   </LINK>
+   <NODE systemname="Cursor (DX11)" filename="%VVVV%\packs\dx11\nodes\modules\Cursor (DX11).v4p" nodename="Cursor (DX11)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="6495" top="7830" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mouse" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Mouse (Devices Window)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Mouse (Devices Window)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="6495" top="7410" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Device" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Device" dstnodeid="14" dstpinname="Mouse">
+   </LINK>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="32">
+   <BOUNDS type="Node" left="1980" top="6930" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Layer Out" dstnodeid="32" dstpinname="Layer 1">
+   </LINK>
+   <NODE systemname="JetPack World1" filename="JetPack World1.v4p" nodename="JetPack World1.v4p" componentmode="Hidden" id="37">
+   <BOUNDS type="Node" left="4008" top="2975" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1680" top="0" width="5575" height="6085">
+   </BOUNDS>
+   <BOUNDS type="Window" left="3885" top="5205" width="13365" height="8265">
+   </BOUNDS>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="37" srcpinname="Layer Out" dstnodeid="7" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Layer" dstnodeid="32" dstpinname="Layer 3">
+   </LINK>
+   <NODE systemname="JetPack World2" filename="vvvvrlandscape\JetPack World2.v4p" nodename="vvvvrlandscape\JetPack World2.v4p" componentmode="Hidden" id="38">
+   <BOUNDS type="Node" left="4185" top="3675" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture SizeXY" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="2130" top="0" width="14340" height="14760">
+   </BOUNDS>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Preview" dstnodeid="7" dstpinname="Layer 1">
+   </LINK>
+   <NODE systemname="Renderer (OpenVR DX11 FOG)" filename="Renderer (OpenVR DX11 FOG).v4p" nodename="Renderer (OpenVR DX11 FOG)" componentmode="Hidden" id="39">
+   <BOUNDS type="Node" left="1965" top="8085" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="555" width="13395" height="12675">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Dummy Data" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="dz" visible="1">
+   </PIN>
+   <PIN pinname="Background Color" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="38" srcpinname="Layer Out" dstnodeid="7" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Layer Out" dstnodeid="39" dstpinname="Layer">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="40" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3000" top="7380" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3000" top="7380" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="40" srcpinname="Y Output Value" dstnodeid="39" dstpinname="Dummy Data">
+   </LINK>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="41">
+   <BOUNDS type="Node" left="1980" top="8925" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1980" top="8925" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="13305" top="660" width="14700" height="8400">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="39" srcpinname="Texture" dstnodeid="41" dstpinname="Texture In">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3720" top="7785" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3720" top="7785" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.18">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="39" dstpinname="dz">
+   </LINK>
+   <LINK srcnodeid="38" srcpinname="Color Output" dstnodeid="39" dstpinname="Background Color">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="View" dstnodeid="39" dstpinname="View">
+   </LINK>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="43">
+   <BOUNDS type="Node" left="4935" top="8475" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4935" top="8475" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="15165" top="9945" width="6240" height="5085">
+   </BOUNDS>
+   </NODE>
+   </PATCH>
