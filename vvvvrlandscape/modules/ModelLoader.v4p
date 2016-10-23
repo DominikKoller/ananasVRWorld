@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="D:\Retune16\Jetpack\vvvvrlandscape\modules\ModelLoader.v4p" systemname="ModelLoader" filename="C:\Users\moco\Dropbox\VVVVR_Landscape\vvvv\modules\ModelLoader.v4p" scrollx="0" scrolly="1080">
+   <PATCH nodename="C:\Users\moco\Dropbox\VVVVR_Landscape\vvvv\modules\ModelLoader.v4p" systemname="ModelLoader" filename="C:\Users\moco\Dropbox\VVVVR_Landscape\vvvv\modules\ModelLoader.v4p" scrollx="0" scrolly="0">
    <NODE systemname="SceneFile (DX11.Geometry Assimp)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.Assimp.dll" nodename="SceneFile (DX11.Geometry Assimp)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1500" top="2685" width="100" height="100">
    </BOUNDS>
@@ -15,7 +15,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1785" top="435" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="C:\Users\Domi\Desktop\RETUNE\Jetpack\vvvvrlandscape\assets\models\pineapple01.dae">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="assets\models\mandarine01.dae">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="||">
    </PIN>
@@ -49,7 +49,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2850" top="555" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="C:\Users\Domi\Desktop\RETUNE\Jetpack\vvvvrlandscape\assets\tex\Pineapple_0.jpg">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="assets\tex\Mandarine.jpg">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="||">
    </PIN>
@@ -177,7 +177,7 @@
    </PIN>
    <PIN pinname="Diffuse Color" slicecount="1" visible="1" values="|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
-   <PIN pinname="Light Attenuation 1" slicecount="1" visible="1" values="0.024">
+   <PIN pinname="Light Attenuation 1" slicecount="1" values="0.024" visible="1">
    </PIN>
    <PIN pinname="Specular Color" visible="1">
    </PIN>

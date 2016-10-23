@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="D:\Retune16\Jetpack\Renderer (OpenVR DX11 FOG).v4p" scrollx="3675" scrolly="0" systemname="Renderer (OpenVR DX11 FOG)" filename="D:\Retune16\Jetpack\Renderer (OpenVR DX11 FOG).v4p">
+   <PATCH nodename="D:\RETUNE16RETUNED\Retune16\Jetpack\Renderer (OpenVR DX11 FOG).v4p" scrollx="2865" scrolly="1935" systemname="Renderer (OpenVR DX11 FOG)" filename="D:\Retune16\Jetpack\Renderer (OpenVR DX11 FOG).v4p">
    <BOUNDS type="Window" left="0" top="555" width="13395" height="12675">
    </BOUNDS>
    <PACK Name="addonpack" Version="34.1.0">
@@ -27,7 +27,7 @@
    </PIN>
    <PIN pinname="Shared Texture" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1" visible="1">
+   <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Depth Buffer Mode" slicecount="1" values="Standard">
    </PIN>
@@ -681,8 +681,6 @@
    </PIN>
    <PIN pinname="fcolor" visible="1" slicecount="1" values="|0.50000,0.50000,0.50000,1.00000|">
    </PIN>
-   <PIN pinname="Enabled" visible="1">
-   </PIN>
    </NODE>
    <LINK srcnodeid="192" srcpinname="Transform Out" dstnodeid="190" dstpinname="InvertViewProjection">
    </LINK>
@@ -706,10 +704,20 @@
    </LINK>
    <LINK srcnodeid="190" srcpinname="Texture Out" dstnodeid="16" dstpinname="Texture In">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="210" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="15300" top="2040" width="480" height="480">
+   <NODE systemname="S+H (String)" nodename="S+H (String)" componentmode="Hidden" id="211">
+   <BOUNDS type="Node" left="6630" top="11055" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Node" left="15300" top="2040" width="0" height="0">
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="58" srcpinname="Error" dstnodeid="211" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="212" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7440" top="10800" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7440" top="10800" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -721,13 +729,9 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="210" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Enabled">
-   </LINK>
-   <LINK srcnodeid="210" srcpinname="Y Output Value" dstnodeid="190" dstpinname="Enabled">
+   <LINK srcnodeid="212" srcpinname="Y Output Value" dstnodeid="211" dstpinname="Set">
    </LINK>
    </PATCH>

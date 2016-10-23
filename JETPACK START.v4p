@@ -1,0 +1,205 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="E:\Retune16\Jetpack\JETPACK START.v4p" systemname="Jetpack Demo" filename="D:\Retune16\Jetpack\Jetpack Demo.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="420" top="525" width="5370" height="6240">
+   </BOUNDS>
+   <NODE systemname="Poser (OpenVR)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\plugins\VVVV.OpenVR.dll" nodename="Poser (OpenVR)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="900" top="1065" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="System" visible="1">
+   </PIN>
+   <PIN pinname="Wait For Sync" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Sync After Frame" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Device Class" visible="1">
+   </PIN>
+   <PIN pinname="HMD Pose" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="1230" top="3285" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Jetpack Pilot" filename="Jetpack Pilot.v4p" componentmode="Hidden" id="9" nodename="Jetpack Pilot.v4p">
+   <BOUNDS type="Node" left="1410" top="2145" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1410" top="2145" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="1080" top="120" width="10575" height="15480">
+   </BOUNDS>
+   <PIN pinname="Preview" visible="1">
+   </PIN>
+   <PIN pinname="Left Controller" visible="1">
+   </PIN>
+   <PIN pinname="Right Controller" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Intensity" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="HMD Pose" visible="1">
+   </PIN>
+   </NODE>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <NODE systemname="TrackedDevices (OpenVR)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\plugins\VVVV.OpenVR.dll" nodename="TrackedDevices (OpenVR)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="885" top="1530" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="System" visible="1">
+   </PIN>
+   <PIN pinname="Left Controller" visible="1">
+   </PIN>
+   <PIN pinname="Right Controller" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="System" dstnodeid="12" dstpinname="System">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Left Controller" dstnodeid="9" dstpinname="Left Controller">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Right Controller" dstnodeid="9" dstpinname="Right Controller">
+   </LINK>
+   <NODE systemname="JetPack World1" filename="JetPack World1.v4p" nodename="JetPack World1.v4p" componentmode="Hidden" id="37">
+   <BOUNDS type="Node" left="1578" top="2870" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="0" top="15" width="5575" height="6085">
+   </BOUNDS>
+   <BOUNDS type="Window" left="990" top="1665" width="13365" height="8265">
+   </BOUNDS>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="37" srcpinname="Layer Out" dstnodeid="7" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Preview" dstnodeid="7" dstpinname="Layer 1">
+   </LINK>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="41">
+   <BOUNDS type="Node" left="2010" top="4710" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2010" top="4710" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9630" top="810" width="8715" height="7365">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="45" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="135" top="5850" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="135" top="5850" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="None">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="HMD Pose" dstnodeid="9" dstpinname="HMD Pose">
+   </LINK>
+   <NODE systemname="Renderer (OpenVR DX11 FOG)" filename="Renderer (OpenVR DX11 FOG).v4p" nodename="Renderer (OpenVR DX11 FOG)" componentmode="Hidden" id="39">
+   <BOUNDS type="Node" left="1230" top="3900" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="555" width="13395" height="12675">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Dummy Data" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="dz" visible="1" slicecount="1" values="0.04">
+   </PIN>
+   <PIN pinname="Background Color" visible="1" slicecount="1" values="|0.04294,0.07170,0.10140,1.00000|">
+   </PIN>
+   <PIN pinname="Compositor Error" visible="1">
+   </PIN>
+   <PIN pinname="Error" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Layer Out" dstnodeid="39" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="39" srcpinname="Texture" dstnodeid="41" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="View" dstnodeid="39" dstpinname="View">
+   </LINK>
+   <NODE systemname="S+H (String)" nodename="S+H (String)" componentmode="Hidden" id="49">
+   <BOUNDS type="Node" left="810" top="4740" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="None">
+   </PIN>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="50" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1305" top="4740" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1305" top="4740" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="50" srcpinname="Y Output Value" dstnodeid="49" dstpinname="Set">
+   </LINK>
+   <LINK srcnodeid="39" srcpinname="Compositor Error" dstnodeid="49" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="51" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2580" top="3675" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2580" top="3675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.041">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="39" dstpinname="dz">
+   </LINK>
+   <NODE systemname="JetPack World2" filename="vvvvrlandscape\JetPack World2.v4p" nodename="vvvvrlandscape\JetPack World2.v4p" componentmode="Hidden" id="38">
+   <BOUNDS type="Node" left="3090" top="2850" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture SizeXY" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="-465" top="0" width="14340" height="12180">
+   </BOUNDS>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="38" srcpinname="Color Output" dstnodeid="39" dstpinname="Background Color">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Layer Out" dstnodeid="7" dstpinname="Layer 2">
+   </LINK>
+   </PATCH>

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="D:\Retune16\Jetpack\JETPACK WORKSHOP.v4p" systemname="JETPACK WORKSHOP" filename="D:\Retune16\Jetpack\JETPACK WORKSHOP.v4p">
+   <PATCH nodename="C:\Users\Domi\Desktop\RETUNE\Jetpack\JETPACK WORKSHOP.v4p" systemname="JETPACK WORKSHOP" filename="C:\Users\Domi\Desktop\RETUNE\Jetpack\JETPACK WORKSHOP.v4p">
    <BOUNDS type="Window" left="705" top="780" width="9420" height="7755">
    </BOUNDS>
    <PACK Name="addonpack" Version="34.1.0">
@@ -93,6 +93,10 @@
    </PIN>
    <PIN pinname="Left and Right Controller" visible="1">
    </PIN>
+   <PIN pinname="Left Controller" visible="1">
+   </PIN>
+   <PIN pinname="Right Controller" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="5" srcpinname="System" dstnodeid="7" dstpinname="System">
    </LINK>
@@ -113,7 +117,9 @@
    </PIN>
    <PIN pinname="Layer 3" visible="1">
    </PIN>
-   <PIN pinname="Layer 4" visible="1">
+   <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 5" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="8" dstpinname="Layer 1">
@@ -170,16 +176,40 @@
    </LINK>
    <LINK srcnodeid="12" srcpinname="Layer Out" dstnodeid="3" dstpinname="Layers">
    </LINK>
-   <NODE systemname="JETPACK WORLD0" filename="JETPACK WORLD0.v4p" componentmode="Hidden" id="13" nodename="JETPACK WORLD0.v4p">
-   <BOUNDS type="Node" left="5610" top="3210" width="100" height="100">
+   <NODE systemname="JETPACK WORLD0" filename="D:\Retune16\Jetpack\JETPACK WORLD0.v4p" componentmode="Hidden" id="13" nodename="JETPACK WORLD0.v4p">
+   <BOUNDS type="Node" left="7515" top="3735" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="5610" top="3210" width="4800" height="3600">
+   <BOUNDS type="Box" left="7515" top="3735" width="4800" height="3600">
    </BOUNDS>
    <BOUNDS type="Window" left="5025" top="2460" width="12315" height="10230">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="13" srcpinname="Layer" dstnodeid="8" dstpinname="Layer 4">
+   <NODE systemname="JetPack World1" filename="D:\Retune16\Jetpack\JetPack World1.v4p" nodename="JetPack World1.v4p" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="7710" top="4065" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9120" top="5910" width="13365" height="8265">
+   </BOUNDS>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="JetPack World2" filename="D:\Retune16\Jetpack\vvvvrlandscape\JetPack World2.v4p" nodename="vvvvrlandscape\JetPack World2.v4p" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="6120" top="4515" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Layer Out" dstnodeid="8" dstpinname="Layer 5">
    </LINK>
+   <NODE systemname="Jetpack Pilot" filename="D:\Retune16\Jetpack\Jetpack Pilot.v4p" nodename="Jetpack Pilot.v4p" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="6165" top="3930" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="13710" top="1500" width="19035" height="15480">
+   </BOUNDS>
+   <PIN pinname="Right Controller" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Left Controller" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
    </PATCH>
